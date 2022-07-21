@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function Countrycard(props) {
   return (
-    <Link href={`/name/${props.name}`}>
+    <Link href={`/country/${props.name}`}>
       <div className="card-container">
         <img
           className="card-flag"
