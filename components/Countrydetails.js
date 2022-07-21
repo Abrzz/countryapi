@@ -1,14 +1,14 @@
 import classes from "./Countrydetails.module.css";
-//import BorderingCountry from "./BorderingCountry";
+import BorderingCountry from "./BorderingCountry";
 export default function Countrydetails({ country }) {
 
   
   const Languages = country.languages.map((language, idx) => (
     <span key={idx}>{language.name} </span>
   ));
-  /*
-  const borderingCountries = country[0].borders ? (
-    country[0].borders.map((country, idx) => (
+  
+  const borderingCountries = country.borders ? (
+    country.borders.map((country, idx) => (
       <BorderingCountry
         key={idx}
         code={country}
@@ -17,7 +17,7 @@ export default function Countrydetails({ country }) {
   ) : (
     <p>No borders.</p>
   );
-  */
+  
  
   return (
     <div className={classes.countryDetailPageContainer}>
@@ -72,7 +72,7 @@ export default function Countrydetails({ country }) {
           <div className={classes.borderingCountries}>
             <b>Bordering countries: </b>
             <div className={classes.borderingCountriesList}>
-              
+              {borderingCountries}
             </div>
           </div>
           <p></p>
