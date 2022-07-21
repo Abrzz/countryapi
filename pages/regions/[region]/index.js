@@ -1,7 +1,7 @@
-import Navbar from "../components/Navbar";
-import Countrycard from "../components/Countrycard";
-import { fetchApi,baseUrl } from "../utils/fetchApi";
-import Searcharea from "../components/Searcharea";
+import Navbar from "../../../components/Navbar";
+import Countrycard from "../../../components/Countrycard";
+import { fetchApi,baseUrl } from "../../../utils/fetchApi";
+import Searcharea from "../../../components/Searcharea";
 export default function App( { countries }) {
   
 const countrylist = countries.map((country, id) =>  <Countrycard key={id} code = {country.alpha3Code} name={country.name} population={country.population} capital={country.capital} region={country.region} img={country.flags["png"]}/>)
@@ -19,9 +19,9 @@ return (
     );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps( {params : {region}}) {
 
-  const countries = await fetchApi(`${baseUrl}/all`)
+  const countries = await fetchApi(`${baseUrl}/region/${region}`)
   
   return {
     props: {
