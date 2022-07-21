@@ -1,10 +1,10 @@
 import Dropdown from "./Dropdown";
 import { useState } from "react";
-
+import { useRouter } from "next/router";
 export default function Searcharea() {
   const [visibility, setVisibility] = useState(false);
   const [searchInput, setSearchInput] = useState("");
- 
+  const router = useRouter()
   
   function handleClick() {
     setVisibility(!visibility);
@@ -13,7 +13,7 @@ export default function Searcharea() {
   
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(searchInput)
+    router.push(`/name/${searchInput}`)
   }
   return (
     <div className="search-area-container">

@@ -19,9 +19,9 @@ return (
     );
 }
 
-export async function getServerSideProps( {params : {region}}) {
+export async function getServerSideProps( {params : {filterType ,filter}}) {
 
-  const countries = await fetchApi(`${baseUrl}/region/${region}`)
+  const countries = await fetchApi(`${baseUrl}/${filterType}/${filter}`)
   
   return {
     props: {

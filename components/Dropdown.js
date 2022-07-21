@@ -7,7 +7,7 @@ export default function Dropdown({ visible }) {
       { 
         regions.map(region => 
         <div className="choice-container">
-          <li onClick={ () => router.push(`/regions/${region}`)}> {region} </li>
+          <li onClick={ () => router.push(`/region/${region}`)}> {region} </li>
         </div>
         )
       }
