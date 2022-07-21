@@ -22,7 +22,7 @@ export default function CountrydetailPage( {country}) {
 
 export async function getServerSideProps( {params: { countryname }}) {
 
-  const data = await fetchApi(`${baseUrl}/name/${countryname}`)
+  const data = await fetchApi(`${baseUrl}/alpha/${countryname}`)
 
   return {
     props : {

@@ -3,7 +3,7 @@ import classes from "./Countrydetails.module.css";
 export default function Countrydetails({ country }) {
 
   
-  const Languages = country[0].languages.map((language, idx) => (
+  const Languages = country.languages.map((language, idx) => (
     <span key={idx}>{language.name} </span>
   ));
   /*
@@ -18,48 +18,49 @@ export default function Countrydetails({ country }) {
     <p>No borders.</p>
   );
   */
+ 
   return (
     <div className={classes.countryDetailPageContainer}>
       <img
         className={classes.Flag}
-        src={country[0].flags.png}
+        src={country.flags.png}
         alt="country flag"
         layout="fill"
       />
       <div className={classes.countryDetailContainer}>
         <div className={classes.infoContainer}>
-          <h1>{country[0].name}</h1>
+          <h1>{country.name}</h1>
           <div className={classes.Columns}>
             <div className={classes.leftColumn}>
               <p>
                 <b>Native name: </b>
-                {country[0].nativeName}
+                {country.nativeName}
               </p>
               <p>
                 <b>Population: </b>
-                {country[0].population}
+                {country.population}
               </p>
               <p>
                 <b>Region: </b>
-                {country[0].region}
+                {country.region}
               </p>
               <p>
                 <b>Subregion: </b>
-                {country[0].subregion}
+                {country.subregion}
               </p>
               <p>
                 <b>Capital: </b>
-                {country[0].capital}
+                {country.capital}
               </p>
             </div>
             <div className={classes.leftColumn}>
               <p>
                 <b>Top level domain: </b>
-                {country[0].topLevelDomain[0]}
+                {country.topLevelDomain[0]}
               </p>
               <p>
                 <b>Currency: </b>
-                {country[0].currencies[0].name}
+                {country.currencies[0].name}
               </p>
               <p>
                 <b>Languages: </b>
