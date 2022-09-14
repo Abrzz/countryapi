@@ -6,7 +6,7 @@ import { baseUrl, fetchApi } from "../../../utils/fetchApi";
 
 export default function CountrydetailPage( {country}) {
   
-
+  
   return (
     <>
       <Navbar />
