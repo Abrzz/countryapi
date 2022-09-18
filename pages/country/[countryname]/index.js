@@ -10,12 +10,7 @@ export default function CountrydetailPage( {country}) {
   return (
     <>
       <Navbar />
-      <div className="main-container">
-        <Link href="/" passHref={true}>
-          <a className="back-btn">Go back</a>
-        </Link>
-          <Countrydetails country={country} />
-      </div>
+      <Countrydetails country={country} />
     </>
   );
 }

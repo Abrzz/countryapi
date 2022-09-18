@@ -44,8 +44,8 @@ ul {
 }
 .card-container {
   margin-top: 25px;
-  width: min(400px,95%);
-  height: 450px;
+  min-height: 300px;
+  max-width: 300px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 10px 2px #DDDDDD;
@@ -56,7 +56,7 @@ ul {
 }
 .card-flag{
   width: 100%;
-  height: 260px;
+  max-height: 50%;
   border-radius: 15px 15px 0 0;
 }
 
@@ -65,13 +65,9 @@ ul {
 }
 
 
-.back-btn {
-  background-color: white;
-  box-shadow: 0px 0px 10px 2px #DDDDDD;
-  border-radius: 10px;
-  padding: 10px;
+h1 {
+  margin: 0;
 }
-  
 
 .main-container {
   width: 95%;
@@ -89,12 +85,10 @@ ul {
   padding-bottom: 1em ;
 }
 .flag-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4em;
-}
-.filter-area{
-  padding-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .input-area {
@@ -130,7 +124,12 @@ ul {
 .hidden {
   display: none;
 }
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+
+  /*.flag-container {
+    justify-content: center;
+  }*/
+
   .main-container {
     margin: 10px
   }

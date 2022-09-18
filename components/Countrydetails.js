@@ -1,11 +1,10 @@
 import classes from "./Countrydetails.module.css";
 import BorderingCountry from "./BorderingCountry";
+import Link from "next/link";
 export default function Countrydetails({ country }) {
 
   
-  const Languages = country.languages.map((language, idx) => (
-    <span key={idx}>{language.name} </span>
-  ));
+  const Languages = country.languages.map((language, idx) => (language.name)).join(", ");
   
   const borderingCountries = country.borders ? (
     country.borders.map((country, idx) => (
@@ -20,14 +19,17 @@ export default function Countrydetails({ country }) {
   
  
   return (
+    <>
     <div className={classes.countryDetailPageContainer}>
+      <Link href="/" passHref={true}>
+            <a className={classes.backBtn}>Go back</a>
+      </Link>
       <img
         className={classes.Flag}
         src={country.flags.png}
         alt="country flag"
         layout="fill"
       />
-      <div className={classes.countryDetailContainer}>
         <div className={classes.infoContainer}>
           <h1>{country.name}</h1>
           <div className={classes.Columns}>
@@ -75,9 +77,8 @@ export default function Countrydetails({ country }) {
               {borderingCountries}
             </div>
           </div>
-          <p></p>
         </div>
-      </div>
     </div>
+    </>
   );
 }
