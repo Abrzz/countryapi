@@ -36,7 +36,7 @@ ul {
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
   height: 5rem;
-  box-shadow: 1px 5px 5px 0px #C9C9C9;
+  box-shadow: 1px 1px 4px 0px #C9C9C9;
 }
 
 .navbar>*{
@@ -48,7 +48,7 @@ ul {
   max-width: 300px;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 0px 10px 2px #DDDDDD;
+  box-shadow: 0px 0px 5px 2px #DDDDDD;
 }
 
 .card-container:hover {
@@ -92,8 +92,28 @@ h1 {
 }
 
 .input-area {
-  margin-bottom: 10px;
+  padding-top: 1em;
+  position: relative;
 }
+
+.input-area>input {
+  border-style: none;
+  padding: 15px 25px 15px 35px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 4px 0px #C9C9C9;
+  background-image: url(../assets/SearchIcon.svg);
+    background-position: 12px 14px;
+    background-repeat: no-repeat;
+}
+
+.input-area>input:hover {
+  outline: none;
+}
+.input-area>button {
+  border-style: none;
+  padding: 5px;
+}
+
 .filter{
   
   background-color: white;
@@ -108,12 +128,12 @@ h1 {
 .dropdown{
   position: absolute;
   background-color: white;
-  box-shadow: 0px 0px 5px 2px #DDDDDD;
+  box-shadow: 0px 0px 3px 2px #DDDDDD;
   border-radius: 5px;
-  top: max(2.5em)
+  top: 50px
 }
 .choice-container {
-  padding: 1em 2.4em 0 2.4em;
+  padding: 1em 2.2em 0 2.2em;
   text-align: center;
 }
 .choice-container:hover, .choice-container:active {
@@ -136,12 +156,13 @@ h1 {
   .search-area-container {
     flex-direction: column;
     justify-content: left;
-    align-items: flex-start;
+    gap: 15px;
+    align-items: center;
   }
   .navbar {
     margin-bottom: 30px;
   }
   .dropdown {
-    top: 75px;
+    top: 115px;
   }
 }

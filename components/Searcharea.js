@@ -1,6 +1,7 @@
 import Dropdown from "./Dropdown";
 import { useState } from "react";
 import { useRouter } from "next/router";
+
 export default function Searcharea() {
   const [visibility, setVisibility] = useState(false);
   const [searchInput, setSearchInput] = useState("");
@@ -24,7 +25,7 @@ export default function Searcharea() {
           onChange={(e) => setSearchInput(e.target.value)}
           value={searchInput}
         ></input>
-        <button type="">Search</button>
+        
       </form>
       <div className="filter-area">
         <div className="filter" onClick={() => handleClick()}>
